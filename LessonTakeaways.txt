@@ -1,0 +1,8 @@
+Module 1: 
+Lesson 1:
+Lesson Takeaways : 
+1. Each Object is unique, has an attribute (which defines current state) and behavior (which defines what the object is capable of doing).
+2. Class is blueprint for object which is used to define attributes and behavior.
+3. An object is an instance of a class.
+
+Lesson 2:
