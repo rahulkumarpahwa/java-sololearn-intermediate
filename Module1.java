@@ -77,3 +77,46 @@ class MyClass {
 //You have just created your first object!
 
 // chapter 2 Finished.
+
+//chapter 3:
+// PRACTICE EXERCISE
+// Creating Classes & Objects
+// Create a program to show loading message to your application users.
+// Define a class Loading which has one public method called LoadingMessage(), which should print "Loading" when called.
+// Create an object named loading and call that method.
+
+//Don't forget to use new keyword while creating an object.
+
+public class Main {
+   public static void main(String[] args) {
+       
+       //create a Loading object with the same name
+       
+       
+       loading.LoadingMessage();
+   }
+}
+
+class Loading {
+     //complete the class, add LoadingMessage() method
+     
+}
+
+// my Solution:
+
+public class Main {
+   public static void main(String[] args) {
+       Loading loading = new Loading();
+       loading.LoadingMessage();
+   }
+}
+
+class Loading {
+    void LoadingMessage(){
+        System.out.println("Loading");
+    }
+}
+
+// chapter 3 Finished.
+
+//chapter 4:
