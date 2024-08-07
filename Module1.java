@@ -282,3 +282,55 @@ public class Vehicle {
 // It's a best practice to keep the variables within a class private. The variables are accessible and modified using Getters and Setters. Tap Continue to learn about Getters and Setters.
 
 // chapter 6 Finished.
+
+// chapter 7:
+// PRACTICE EXERCISE
+// Access Modifiers
+
+// You're a tour manager and you need to have a list of countries along with its capitals.
+// You're given a program which creates Country object and you should output the name and the capital, but something goes wrong.
+
+// Task
+// Change the access modifiers of the Country class fields in order to perform the required output.
+// Use public access modifier to provide access to any other classes.
+
+public class Program
+{
+	public static void main(String[] args) {
+	    Country c = new Country();
+	    c.name = "France";
+	    c.capital = "Paris";
+	    System.out.println("Country:  " + c.name);
+	    System.out.println("Capital:  " + c.capital);
+}
+	
+	
+}
+class Country{
+    //change the code below
+    private String name;
+    protected String capital;
+}
+
+// my solution:
+
+public class Program
+{
+	public static void main(String[] args) {
+	    Country c = new Country();
+	    c.name = "France";
+	    c.capital = "Paris";
+	    System.out.println("Country:  " + c.name);
+	    System.out.println("Capital:  " + c.capital);
+}
+	
+	
+}
+class Country{
+    //change the code below
+    public String name;
+    public String capital;
+}
+
+//chapter 7 Finished.
+
