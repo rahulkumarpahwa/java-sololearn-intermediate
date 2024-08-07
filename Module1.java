@@ -390,3 +390,101 @@ class Program {
 // Getters and setters are fundamental building blocks for encapsulation, which will be covered in the next module.
 
 // chapter 8 Finished.
+
+// chapter 9:
+
+// PRACTICE EXERCISE
+// Getters and Setters
+
+// The program you are given receives name and age of student as input.
+
+// Complete the program to set the values for the corresponding attributes of the Student class and prints out the final result. If the age is <0, program should output "Invalid age" and assign a 0 value to the age attribute.
+
+// Sample Input
+
+// Olivia
+// -2
+
+// Sample Output
+// Invalid age
+// Name: Olivia
+// Age: 0
+
+// Explanation
+
+// -2 is invalid value for age attribute, that's why "Invalid age" and "Age: 0" is printed. Setter and Getter should handle this.
+
+// You need to handle the conditions inside the Getter and the Setter.
+
+import java.util.Scanner;
+
+class Main {
+
+   public static void main(String[] args) {
+       Scanner read = new Scanner(System.in);
+       String name = read.nextLine();
+       int age = read.nextInt();
+       Student student = new Student();
+       student.name = name;
+       
+       //set the age via Setter
+       
+       
+       System.out.println("Name: " + student.name);
+       System.out.println("Age: " + student.getAge());
+   }
+}
+
+class Student {
+
+   public String name;
+   private int age;
+   
+   public int getAge() {
+       //complete Getter
+       
+   }
+   public void setAge(int age) {
+       //complete Setter
+       
+   }
+}
+
+// my solution:
+import java.util.Scanner;
+
+class Main {
+
+   public static void main(String[] args) {
+       Scanner read = new Scanner(System.in);
+       String name = read.nextLine();
+       int age = read.nextInt();
+       Student student = new Student();
+       student.name = name;
+       student.setAge(age);     
+       System.out.println("Name: " + student.name);
+       System.out.println("Age: " + student.getAge());
+   }
+}
+
+class Student {
+
+   public String name;
+   private int age;
+   
+   public int getAge() {
+       return this.age;
+       
+   }
+   public void setAge(int age) {
+       if(age < 0 ){
+           this.age = 0;
+           System.out.println("Invalid age");
+       } else  {
+           this.age = age;
+       }
+       
+   }
+}
+
+// chapter 9 Finished.
