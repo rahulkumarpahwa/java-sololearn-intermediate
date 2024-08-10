@@ -769,3 +769,66 @@ public class Person {
 // Arrays and Strings are also reference data types.
 
 // chapter 12 Finished.
+
+//chapter 13:
+//The Math Class
+
+// The JDK defines a number of useful classes, one of them being the Math class, which provides predefined methods for mathematical operations.
+
+// You do not need to create an object of the Math class to use it. To access it, just type in Math. and the corresponding method.
+
+// Math.abs() returns the absolute value of its parameter.
+
+public class Program {
+    public static void main(String[] args) {
+        int a = Math.abs(10); 
+        System.out.println(a);
+        
+        int b = Math.abs(-20);
+        System.out.println(b);
+    }
+}
+
+//Math.ceil() rounds a floating point value up to the nearest integer value. The rounded value is returned as a double.
+
+public class Program {
+    public static void main(String[] args) {
+
+        double c = Math.ceil(10.01f);
+        System.out.println(c);
+    }
+}
+
+// Similarly, Math.floor() rounds a floating point value down to the nearest integer value.
+public class Program {
+    public static void main(String[] args) {
+
+        double c = Math.floor(10.01f);
+        System.out.println(c);
+    }
+}
+
+// Math.max() returns the largest of its parameters.
+public class Program {
+    public static void main(String[] args) {
+
+        int c = Math.max(10, 20);
+        System.out.println(c);
+    }
+}
+
+// Conversely, Math.min() returns the smallest parameter.
+
+//Math.pow() takes two parameters and returns the first parameter raised to the power of the second parameter.
+
+public class Program {
+    public static void main(String[] args) {
+
+        double c = Math.pow(10, 2);
+        System.out.println(c);
+    }
+}
+
+// There are a number of other methods available in the Math class, including: sqrt() for square root, sin() for sine, cos() for cosine, and others.
+
+// chapter 13 Finished.
