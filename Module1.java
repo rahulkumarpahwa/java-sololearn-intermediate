@@ -832,3 +832,43 @@ public class Program {
 // There are a number of other methods available in the Math class, including: sqrt() for square root, sin() for sine, cos() for cosine, and others.
 
 // chapter 13 Finished.
+
+// chapter 14:
+// PRACTICE EXERCISE
+
+// Write a program to take numbers as input a return the first number raised to the power of the second number.
+// Sample Input
+// 2
+// 4
+// Sample Output
+// 16.0
+// i
+// Use Math.pow() method.
+
+import java.util.Scanner;
+
+class Main {
+   public static void main(String[] args) {
+       Scanner read = new Scanner(System.in);
+       int num1 = read.nextInt();
+       int num2 = read.nextInt();
+
+       //your code goes here
+       
+   }
+}
+
+// My solution:
+import java.util.Scanner;
+
+class Main {
+   public static void main(String[] args) {
+       Scanner read = new Scanner(System.in);
+       int num1 = read.nextInt();
+       int num2 = read.nextInt();
+       double power = Math.pow(num1, num2 );
+       System.out.println(power);
+   }
+}
+
+// chapter 14 Finished.
