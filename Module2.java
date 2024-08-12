@@ -204,3 +204,99 @@ class Program {
 // For example, super.var accesses the var member of the superclass. If we need to change the super.var, we need to access it inside the constructor of the sub class and can't do outside.
 
 // chapter 3 Finished.
+
+// chapter 4:
+
+// PRACTICE EXERCISE
+// Inheritance
+
+// You are developing your own photo editing application.
+
+// The standard free version allows you to draw and write text on a photo. The Pro subscription has 2 more features -  the ability to use effects and the ability to change resolution.
+
+// Complete/fix the given code to inherit Pro class from Standard class and successfully execute all the given method calls.
+
+// Be attentive to access modifiers.
+
+//be attentive to access modifiers
+class Standard {
+   protected void draw() {
+       System.out.println("Drawing");
+   }
+
+   private void write() {
+       System.out.println("Writing");
+   }
+}
+//fix the class
+class Pro{
+
+   protected void useEffects() {
+       System.out.println("Using Effects");
+   }
+
+   protected void changeResolution() {
+       System.out.println("Changing Resolution");
+   }
+}
+
+public class Main {
+   public static void main(String[] args) {
+       Standard standard1 = new Standard();
+       Pro pro1 = new Pro();
+       
+       //standard version
+       standard1.draw();
+       standard1.write();
+       
+       //Pro version
+       pro1.draw();
+       pro1.write();
+       pro1.useEffects();
+       pro1.changeResolution();
+   }
+}
+
+
+// My Solution :
+
+//be attentive to access modifiers
+class Standard {
+   protected void draw() {
+       System.out.println("Drawing");
+   }
+
+   protected void write() {
+       System.out.println("Writing");
+   }
+}
+
+class Pro extends Standard{
+
+   protected void useEffects() {
+       System.out.println("Using Effects");
+   }
+
+   protected void changeResolution() {
+       System.out.println("Changing Resolution");
+   }
+}
+
+public class Main {
+   public static void main(String[] args) {
+       Standard standard1 = new Standard();
+       Pro pro1 = new Pro();
+       
+       //standard version
+       standard1.draw();
+       standard1.write();
+       
+       //Pro version
+       pro1.draw();
+       pro1.write();
+       pro1.useEffects();
+       pro1.changeResolution();
+   }
+}
+
+// chapter 4 Finished.
