@@ -465,3 +465,122 @@ class HybridVehicle extends Vehicle{
 }
 
 // chapter 6 Finished.
+
+// chapter 7:
+
+// Method Overriding
+
+// As we saw in the previous lesson, a subclass can define a behavior that's specific to the subclass type, meaning that a subclass can implement a parent class method based on its requirement.
+
+// This feature is known as method overriding.
+
+// Example:
+
+class Animal {
+    public void makeSound() {
+        System.out.println("Grr...");
+    }
+}
+class Cat extends Animal {
+    public void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+class Program {
+    public static void main(String[] args) {
+        Cat c = new Cat();
+        c.makeSound();
+    }
+}
+
+// In the code above, the Cat class overrides the makeSound() method of its superclass Animal.
+
+// Rules for Method Overriding:
+
+// - Should have the same return type and arguments
+
+// - The access level cannot be more restrictive than the overridden method's access level (Example: If the superclass method is declared public, the overriding method in the sub class can be neither private nor protected)
+
+// - A method declared final or static cannot be overridden
+
+// - If a method cannot be inherited, it cannot be overridden
+
+// - Constructors cannot be overridden
+
+// Method overriding is also known as runtime polymorphism. Example: 
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myAnimal = new Dog(); // Upcasting
+        myAnimal.sound(); // Outputs: Dog barks
+    }
+}
+
+// explanation :  In this example, the sound method of the Dog class overrides the sound method of the Animal class. The actual method that gets called is determined at runtime based on the object type (Dog in this case) rather than the reference type (Animal).
+
+
+// Method Overloading
+
+// When methods have the same name, but different parameters, it is known as method overloading.
+
+// This can be very useful when you need the same method functionality for different types of parameters.
+
+// The following example illustrates a method that returns the maximum of its two parameters.
+
+int max(int a, int b) {
+  if(a > b) {
+    return a;
+  }
+  else {
+    return b;
+  }
+}
+
+// The method shown above will only work for parameters of type integer.
+
+// However, we might want to use it for doubles, as well. For that, you need to overload the max method:
+
+class Program {
+    static double max(double a, double b) {
+        if(a > b) {
+            return a;
+        }
+        else {
+            return b;
+        }
+    }
+    static int max(int a, int b) {
+        if(a > b) {
+            return a;
+        }
+        else {
+            return b;
+        }
+    }
+
+    public static void main(String[] args) {        
+        System.out.println(max(8, 17));
+        System.out.println(max(3.14, 7.68));
+    }
+
+}
+
+// Now, our max method will also work with doubles.
+
+// An overloaded method must have a different argument list; the parameters should differ in their type, number, or both.
+
+// Another name for method overloading is compile-time polymorphism.
+
+// chapter 7 Finished.
