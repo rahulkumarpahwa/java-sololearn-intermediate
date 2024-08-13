@@ -584,3 +584,58 @@ class Program {
 // Another name for method overloading is compile-time polymorphism.
 
 // chapter 7 Finished.
+
+// chapter 8:
+
+// PRACTICE EXERCISE
+// Overloading
+
+// Complete and overload the doubleTheValue() method to calculate the double the value of the a and b variables.
+
+// Be attentive to value types of parameters while overloading.
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+        int a = 5;
+        double b = 10.2;
+        
+        System.out.println(doubleTheValue(a));
+        System.out.println(doubleTheValue(b));
+                
+    }
+    //complete the method for integer value type
+    public static int doubleTheValue() {
+        
+    }
+    //overload the method for double value type
+    public static double doubleTheValue() {
+        
+    }
+}
+
+
+// my solution : 
+public class Main {
+    public static void main(String[] args) {
+        
+        int a = 5;
+        double b = 10.2;
+        
+        System.out.println(doubleTheValue(a));
+        System.out.println(doubleTheValue(b));
+                
+    }
+    //complete the method for integer value type
+    public static int doubleTheValue(int a) {
+        return a * 2;
+        
+    }
+    //overload the method for double value type
+    public static double doubleTheValue(double a) {
+        return a * 2;
+    }
+}
+
+ // chapter 8 Finished.
