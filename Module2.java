@@ -1052,3 +1052,50 @@ public class Program {
 // On the other hand, type casting is mandatory when assigning floating point values to integer variables.
 
 // chapter 13 Finished.
+
+// chapter 14:
+
+// PRACTICE EXERCISE
+// Casting
+
+// Computers understand only numbers, so every character has a numeric representation.
+
+// The program you are given takes a character as input. Write a program to output its numeric value.
+
+// Sample Input
+
+// a
+
+// Sample Output
+
+// 97
+
+// Use cast to assign value of character to an integer.
+
+import java.util.Scanner;
+
+class Main {
+   public static void main(String[] args) {
+       Scanner read = new Scanner(System.in);
+       char a = read.next().charAt(0);
+       
+       //your code goes here
+       
+    }   
+}
+
+//my solution :
+
+import java.util.Scanner;
+
+class Main {
+   public static void main(String[] args) {
+       Scanner read = new Scanner(System.in);
+       char a = read.next().charAt(0);
+       int b = (int) a;
+       System.out.println(b);
+       
+    }   
+}
+
+// chapter 14 Finished.
