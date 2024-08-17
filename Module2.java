@@ -1297,3 +1297,150 @@ public class Program {
 // The class Robot has an inner class Brain. The inner class can access all of the member variables and methods of its outer class, but it cannot be accessed from any outside class.
 
 // chapter 18 Finished.
+
+// chapter 19:
+
+// Comparing Objects
+
+// Remember that when you create objects, the variables store references to the objects.
+
+// So, when you compare objects using the equality testing operator (==), it actually compares the references and not the object values.
+
+// Example:
+
+class Animal {
+    String name;
+    Animal(String n) {
+        name = n;
+    }
+}
+
+class MyClass {
+    public static void main(String[ ] args) {
+        Animal a1 = new Animal("Robby");
+        Animal a2 = new Animal("Robby");
+        System.out.println(a1 == a2);
+    }
+}
+
+// OUTPUT
+
+// false
+
+// Despite having two objects with the same name, the equality testing returns false, because we have two different objects (two different references or memory locations).
+
+// equals()
+
+// Each object has a predefined equals() method that is used for semantical equality testing.
+
+/* note : Semantical equality testing meaning: It means that when you use the operator with object types, what you’re actually doing is testing whether the two variables have references that point to the same space in memory. Even if the objects referenced by the variables are identical in regards to their values, the results will still be false. */
+
+// But, to make it work for our classes, we need to override it and check the conditions we need.
+
+// There is a simple and fast way of generating the equals() method, other than writing it manually.
+
+// Just right click in your class, go to Source->Generate hashCode() and equals()... 
+
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
+String imagePath = "./image4.jpg";
+BufferedImage myPicture = ImageIO.read(new File(imagePath));
+
+// This will automatically create the necessary methods.
+
+class Animal {
+  String name;
+  Animal(String n) {
+    name = n;
+  }
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((name == null) ? 0 : name.hashCode());
+    return result;
+  }
+  @Override
+  public boolean [b]equals[/b](Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    Animal other = (Animal) obj;
+    if (name == null) {
+      if (other.name != null)
+        return false;
+    } else if (!name.equals(other.name))
+      return false;
+    return true;
+  }
+}
+
+// The automatically generated hashCode() method is used to determine where to store the object internally. Whenever you implement equals, you MUST also implement hashCode.
+
+// We can run the test again, using the equals method:
+
+class Animal {
+    String name;
+    Animal(String n) {
+        name = n;
+    }
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        return result;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Animal other = (Animal) obj;
+        if (name == null) {
+            if (other.name != null)
+                return false;
+        } else if (!name.equals(other.name))
+            return false;
+        return true;
+    }
+}
+
+class Program {
+    public static void main(String[ ] args) {
+        Animal a1 = new Animal("Robby");
+        Animal a2 = new Animal("Robby");
+        System.out.println(a1.equals(a2));
+    }
+}
+
+// output
+// true
+
+// You can use the same menu to generate other useful methods, such as getters and setters for your class attributes. (see picture)
+
+// example : 
+
+class A {
+private int x;
+public boolean equals(Object o) {
+return ((A)o).x == this.x;
+}
+public static void main(String[ ] args) {
+A a = new A();
+a.x = 9;
+A b = new A();
+b.x = 5;
+System.out.println(a.equals(b));
+}
+}
+
+// chapter 19 Finished. (Revise it again.)
