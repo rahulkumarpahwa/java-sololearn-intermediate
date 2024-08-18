@@ -1608,3 +1608,5 @@ import java.awt.*;
 // The wildcard character (*) is used to import all of the classes in the package.
 
 // chapter 22 Finished.
+
+//Module 2 Completed.
