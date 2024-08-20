@@ -173,3 +173,113 @@ try {
 // Following the specific exceptions, you can use the Exception type to handle all other exceptions as the last catch.
 
 // chapter 3 Finished.
+
+// chapter 4:
+
+// PRACTICE EXERCISE
+// Multiple Exceptions
+
+// You need to write a divider program which will operate with integers,
+
+// The program you are given should take two integers as input and execute the division, but we need to handle two exceptions:
+
+// 1. the divider shouldn't be zero
+
+// 2. both inputs should be integers.
+
+// Complete the program to handle them. For the first exception, the program should output "Error: division by zero", and for the second one, "Error: wrong value type".
+
+// Sample Input
+
+// 1
+// b
+
+// Sample Output
+
+// Error: wrong value type
+
+// Use ArithmeticException for first exception and InputMismatchException for the second one.
+
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    Scanner scanner = new Scanner(System.in);
+	    
+	    try {
+	        int num1 = scanner.nextInt();
+	        int num2 = scanner.nextInt();
+	        /*
+	        1. Error: division by zero
+	        2. Error: wrong value type
+	        */
+	        //your code goes here
+	    } catch() {
+	        
+	    } catch(){
+	        
+	    }
+	}
+}
+
+// my gemini solution: (next time do it yourself)
+
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            // Prompt user for input with clear instructions
+            System.out.println("Enter two integers to be divided (avoid dividing by zero):");
+            int num1 = scanner.nextInt();
+            int num2 = scanner.nextInt();
+
+            // Check for division by zero before performing the calculation
+            if (num2 == 0) {
+                throw new ArithmeticException("Division by zero is not allowed.");
+            }
+
+            double result = (double) num1 / num2; // Use double for potentially non-integer results
+            System.out.println("The result of the division is: " + result);
+        } catch (InputMismatchException e) {
+            System.err.println("Invalid input. Please enter only integers.");
+        } catch (ArithmeticException e) {
+            System.err.println(e.getMessage()); // Print specific error message
+        } finally {
+            scanner.close(); // Always close the Scanner resource
+        }
+    }
+}
+
+//my final changes with it:
+import java.util.Scanner;
+import java.util.InputMismatchException;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            int num1 = scanner.nextInt();
+            int num2 = scanner.nextInt();
+
+            if (num2 == 0) {
+                throw new ArithmeticException("Division by zero is not allowed.");
+            }
+
+            int result = num1 / num2;
+            System.out.println(result);
+        } catch (InputMismatchException e) {
+            System.out.println("Error: wrong value type");
+        } catch (ArithmeticException e) {
+            System.out.println("Error: division by zero");
+        }
+    }
+}
+
+// chapter 4 Finished.
