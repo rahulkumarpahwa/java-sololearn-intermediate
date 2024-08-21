@@ -356,3 +356,78 @@ class MyClass {
 // It may seem that implementing the Runnable interface is a bit more complex than extending from the Thread class. However, implementing the Runnable interface is the preferred way to start a Thread, because it enables you to extend from another class, as well.
 
 // chapter 5 Finished.
+
+// chapter 6:
+
+// PRACTICE EXERCISE
+// Threads
+
+// We are writing a registration program for our app. At first it should welcome the users, then ask the users to enter their names.
+
+// But program you are given executes this sequence in reverse order.
+
+// Complete the program by extending the Thread class for Welcome and Name classes, then setting priorities for their run methods so that the program outputs the messages in the correct order.
+
+// Use setPriority(number) method on the objects - obj.setPriority(number). The higher the number, the higher the priority.
+
+class Main {
+    public static void main(String[ ] args) {
+        Name name = new Name();
+        //set priority
+        
+        
+        Welcome welcome = new Welcome();
+        //set priority
+        
+        
+        name.start();
+        welcome.start();
+    }
+}
+
+//extend the Thread class
+class Welcome{
+    public void run() {
+        System.out.println("Welcome!");
+    }
+}
+
+//extend the Thread class
+class Name{
+    public void run() {
+        System.out.println("Please enter your name");
+    }
+}
+
+//my solution :
+
+class Main {
+    public static void main(String[ ] args) {
+        Name name = new Name();
+        name.setPriority(5);
+        
+        
+        Welcome welcome = new Welcome();
+         welcome.setPriority(9);
+        
+        
+        name.start();
+        welcome.start();
+    }
+}
+
+//extend the Thread class
+class Welcome extends Thread{
+    public void run() {
+        System.out.println("Welcome!");
+    }
+}
+
+//extend the Thread class
+class Name extends Thread{
+    public void run() {
+        System.out.println("Please enter your name");
+    }
+}
+
+// chapter 6 Finished.
