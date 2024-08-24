@@ -686,3 +686,94 @@ public class MyClass {
 // - Use a LinkedList when you need to make a large number of inserts and/or deletes.
 
 // chapter 10 Finished.
+
+// chapter 11:
+
+// PRACTICE EXERCISE
+// LinkedLists
+
+// The program you are given declares LinkedList "words".
+
+// Write a program to take words as input and add them to LinkedList untill its size isn't equal to 5, then output only those words whose length is more than 4 characters.
+
+// Sample Input
+
+// Java
+
+// practice
+
+// is
+
+// makes
+
+// perfect
+
+// Sample Output
+
+// practice
+
+// makes
+
+// perfect
+
+// length() method returns the number of characters in a string.
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[ ] args) {
+	    Scanner scanner = new Scanner(System.in);
+        
+        
+        LinkedList<String> words = new LinkedList<String>();
+        
+        
+        while(words.size()<5){
+            String word = scanner.nextLine();
+            //add the word to LinkedList
+            
+        }
+        
+        //your code goes here
+        
+    }
+}
+
+// my solution :
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[ ] args) {
+	    Scanner scanner = new Scanner(System.in);
+        
+        
+        LinkedList<String> words = new LinkedList<String>();
+        
+        
+        while(words.size()<5){
+            String word1 = scanner.nextLine();
+            String word2 = scanner.nextLine();
+            String word3 = scanner.nextLine();
+            String word4 = scanner.nextLine();
+            String word5 = scanner.nextLine();
+            
+            words.add(word1);
+            words.add(word2);
+            words.add(word3);
+            words.add(word4);
+            words.add(word5);
+        }
+        
+        for(String str : words){
+            if(str.length() > 4){
+                System.out.println(str);
+            }
+        }
+        
+    }
+}
+
+// chapter 11 finished.
