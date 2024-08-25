@@ -953,3 +953,71 @@ public class MyClass {
 
 
 // chapter 14 Finished.
+
+// chapter 15:
+
+// Sorting Lists
+
+// For the manipulation of data in different collection types, the Java API provides a <b>Collections </b>class, which is included in the java.util package.
+
+// One of the most popular <b>Collections </b>class methods is <b>sort()</b>, which sorts the elements of your collection type. The methods in the Collections class are static, so you don't need a Collections object to call them.
+
+// Example:
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        ArrayList<String> animals = new ArrayList<String>();
+        animals.add("tiger");
+        animals.add("cat");
+        animals.add("snake");
+        animals.add("dog");
+        
+        Collections.sort(animals);
+       
+        System.out.println(animals);
+    }
+}
+
+// output :
+// [cat, dog, snake, tiger]
+
+// As you can see, the elements have been sorted alphabetically.
+
+// Sorting Lists
+
+// You can call the <b>sort()</b> methods on different types of Lists, such as Integers.
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        ArrayList<Integer> nums = new ArrayList<Integer>();
+        nums.add(3);
+        nums.add(36);
+        nums.add(73);
+        nums.add(40);
+        nums.add(1);
+        
+        Collections.sort(nums);
+        System.out.println(nums);
+    }
+}
+
+//OUTPUT
+
+// [1, 3, 36, 40, 73]
+
+// Other useful methods in the <b>Collections </b>class:
+
+// <b>max(Collection c):</b> Returns the maximum element in c as determined by natural ordering.
+
+// <b>min(Collection c):</b> Returns the minimum element in c as determined by natural ordering.
+
+// <b>reverse(List list):</b> Reverses the sequence in list.
+
+// <b>shuffle(List list):</b> Shuffles (i.e., randomizes) the elements in list.
+
+// chapter 15 Finished.
