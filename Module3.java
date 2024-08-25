@@ -1021,3 +1021,77 @@ public class MyClass {
 // <b>shuffle(List list):</b> Shuffles (i.e., randomizes) the elements in list.
 
 // chapter 15 Finished.
+
+// chapter 16:
+// PRACTICE EXERCISE
+// Sorting Lists
+
+// The program you are given declares ArrayList of integers.
+
+// Complete the program to take numbers as input and add them to ArrayList until its size isn't equal to 5. Then output its maximum and minimum values.
+
+// Sample Input
+
+// 4
+
+// 12
+
+// 3
+
+// 88
+
+// 96
+
+// Sample Output
+
+// 96
+
+// 3
+
+// Use <b>Collections.max()</b> and <b>Collections.min()</b> to get the maximum and the minimum.
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main {
+    public static void main(String[ ] args) {
+        ArrayList<Integer> nums = new ArrayList<Integer>();
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        while(nums.size()<5){
+            int num = scanner.nextInt();
+            //your code goes here
+            
+        }
+        
+        //your code goes here
+        
+    }
+}
+
+// my solution :
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main {
+    public static void main(String[ ] args) {
+        ArrayList<Integer> nums = new ArrayList<Integer>();
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        while(nums.size()<5){
+            int num = scanner.nextInt();
+            nums.add(num);          
+            
+        }
+        
+       System.out.println( Collections.max(nums));      
+         System.out.println( Collections.min(nums));      
+    }
+}
+
+// chapter 16 Finished.
