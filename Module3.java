@@ -1415,3 +1415,111 @@ public class MyClass {
 // Don't forget to close the file once you're finished writing to it!
 
 //chapter 21 Finished.
+
+//chapter 22:
+// PRACTICE EXERCISE
+// Creating & Writing Files
+
+// You want to plan your day and create your to do list.
+
+// Complete the program to take the names of 3 tasks as input and write them down in the file "tasks.txt", each on a new line.
+
+// Then use the <b>readFile()</b> method to output the tasks.
+
+// Sample Code
+
+// Workout
+
+// Report
+
+// Pool
+
+// Sample Output
+
+// Workout
+
+// Report
+
+// Pool
+
+// Add \n to the end of each line to create a new line.
+
+import java.io.File;
+import java.util.Scanner;
+import java.util.Formatter;
+
+public class Main {
+    public static void main(String[ ] args) {
+        Scanner input = new Scanner(System.in);
+        try {
+            Formatter f = new Formatter("tasks.txt");
+            int count = 0;
+            while(count < 3) {
+                //your code goes here
+                
+                count++;
+            }
+            f.close();
+        }
+        catch (Exception e) {
+            System.out.println("Error");
+        }
+        readFile();
+    }
+
+      public static void readFile() {
+        try {
+            File x = new File("tasks.txt");
+            Scanner sc = new Scanner(x);
+            while(sc.hasNext()) {
+                System.out.println(sc.next());
+            }
+            sc.close();
+        }
+        catch (Exception e) {
+            System.out.println("Error");
+        }
+      }
+}
+
+//my solution :
+
+import java.io.File;
+import java.util.Scanner;
+import java.util.Formatter;
+
+public class Main {
+    public static void main(String[ ] args) {
+        Scanner input = new Scanner(System.in);
+        try {
+            Formatter f = new Formatter("tasks.txt");
+            int count = 0;
+            while(count < 3) {
+                String task = input.nextLine();
+                f.format("%s \n", task);
+                count++;
+            }
+            f.close();
+        }
+        catch (Exception e) {
+            System.out.println("Error");
+        }
+        readFile();
+    }
+
+      public static void readFile() {
+        try {
+            File x = new File("tasks.txt");
+            Scanner sc = new Scanner(x);
+            while(sc.hasNext()) {
+                System.out.println(sc.next());
+            }
+            sc.close();
+        }
+        catch (Exception e) {
+            System.out.println("Error");
+        }
+      }
+}
+
+//chapter 22 Finished.
