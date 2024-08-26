@@ -1336,3 +1336,82 @@ try {
 // It is always good practice to close a file when finished working with it. One way to do this is to use the Scanner's <b>close()</b> method.
 
 // chapter 20 Finished.
+
+// chapter 21:
+
+// Creating Files
+
+// Formatter, another useful class in the java.util package, is used to create content and write it to files.
+
+// Example:
+
+import java.util.Formatter;
+
+public class MyClass {
+   public static void main(String[ ] args) {
+  try {
+    Formatter f = new Formatter("C:\\sololearn\\test.txt");
+  } catch (Exception e) {
+      System.out.println("Error");
+  }
+  }
+}
+
+// This creates an empty file at the specified path. If the file already exists, this will overwrite it.
+
+// Again, you need to surround the code with a try/catch block, as the operation can fail.
+
+
+// Writing to Files
+
+// Once the file is created, you can write content to it using the same Formatter object's <b>format()</b> method.
+
+// Example:
+
+import java.io.File;
+import java.util.Scanner;
+import java.util.Formatter;
+
+public class MyClass {
+    public static void main(String[ ] args) {
+        try {
+            Formatter f = new Formatter("test.txt");
+            f.format("%s %s %s", "1","John", "Smith \r\n");
+            f.format("%s %s %s", "2","Amy", "Brown");
+            f.close();
+
+            File x = new File("test.txt");
+            Scanner sc = new Scanner(x);
+            while(sc.hasNext()) {
+                System.out.println(sc.next());
+            }
+            sc.close();
+        } catch (Exception e) {
+        System.out.println("Error");
+        }
+    }
+}
+
+//output:
+
+// 1
+// John
+// Smith
+// 2
+// Amy
+// Brown
+
+// The <b>format()</b> method formats its parameters according to its first parameter.
+
+// %s mean a string and get's replaced by the first parameter after the format. The second %s get's replaced by the next one, and so on. So, the format %s %s %s denotes three strings that are separated with spaces.
+
+// Note: \r\n is the newline symbol in Windows.
+
+// The code above creates a file with the following content:
+
+1 John Smith
+2 Amy Brown
+
+// Don't forget to close the file once you're finished writing to it!
+
+//chapter 21 Finished.
