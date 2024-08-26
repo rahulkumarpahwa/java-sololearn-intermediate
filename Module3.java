@@ -1291,3 +1291,48 @@ public class MyClass {
 // Note that we used double backslashes in the path, as one backslash should be escaped in the path String.
 
 //chapter 19 Finished.
+
+//chapter 20:
+
+// Reading a File
+
+// Files are useful for storing and retrieving data, and there are a number of ways to read from a file.
+
+//  One of the simplest ways is to use the <b>Scanner </b>class from the java.util package.
+
+// The constructor of the <b>Scanner </b>class can take a File object as input.
+
+// To read the contents of a text file at the path "C:\\sololearn\\test.txt", we would need to create a File object with the corresponding path and pass it to the Scanner object.
+
+try {
+  File x = new File("C:\\sololearn\\test.txt");
+  Scanner sc = new Scanner(x);      
+}
+ catch (FileNotFoundException e) {
+
+}
+
+// We surrounded the code with a try/catch block, because there's a chance that the file may not exist.
+
+// Reading a File
+
+// The <b>Scanner </b>class inherits from the <b>Iterator</b>, so it behaves like one.
+
+// We can use the Scanner object's <b>next()</b> method to read the file's contents.
+
+try {
+  File x = new File("C:\\sololearn\\test.txt");
+  Scanner sc = new Scanner(x);
+  while(sc.hasNext()) {
+    System.out.println(sc.next());
+  }
+  sc.close();
+} catch (FileNotFoundException e) {
+  System.out.println("Error");
+}
+
+// The file's contents are output word by word, because the <b>next()</b> method returns each word separately.
+
+// It is always good practice to close a file when finished working with it. One way to do this is to use the Scanner's <b>close()</b> method.
+
+// chapter 20 Finished.
